@@ -6,9 +6,9 @@ export default function Signup() {
   return (
     <Layout>
                  <div className='pt-20 w-full flex justify-center'>
-                         <div className='w-1/2 flex justify-center'>
-                               <div className='flex flex-col w-full items-center space-y-3 w-3/5'>
-                                        <div className='flex flex-col items-center space-y-4'>
+                         <div className='w-3/5 flex justify-center'>
+                               <div className='flex flex-col w-full items-center space-y-3 w-2/3'>
+                                        <div className='flex flex-col items-center space-y-4 w-full'>
                                             <h5 className='text-2xl font-semibold '>Create your account</h5>
                                             <h5 className=' font-light text-slate-500'>We can improve your experience in managing your resume.</h5>
                                             <button className='flex items-center border  w-full justify-center space-x-3 py-3 rounded-lg'>

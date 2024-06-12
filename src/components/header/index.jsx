@@ -1,5 +1,6 @@
 import React from 'react'
 import logo from "../../assets/logo.png"
+import { Link } from 'react-router-dom'
 
 export default function Header() {
   return (
@@ -29,8 +30,12 @@ export default function Header() {
                     
                  </div>
                 <div className="w-1/3 flex items-center space-x-4 justify-end ">
-                     <h5>Login</h5>
+                  <Link to={"/login"}>
+                  <h5>Login</h5>
+                  </Link>
+                  <Link to={"/signup"}>
                     <button className='bg-black py-2.5 px-4 rounded-full text-white text-sm'>Register</button>
+                    </Link>
                      
 
                 

@@ -75,7 +75,7 @@ export default function Resume() {
                          {next !=7&&
 
                        
-                           <div className='flex w-full'>
+                           <div className='flex w-full space-x-14'>
                                  <div className='w-3/5 py-6'>
                                     {next==1&&<Contact 
                                                   params={params}
