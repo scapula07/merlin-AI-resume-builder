@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function Preview() {
+export default function Preview({params,setParam}) {
   return (
     <div className='w-full flex justify-center'>
              <div className='w-6/7 h-96 relative' style={{background:"#e3e2de",height:"600px"}}>

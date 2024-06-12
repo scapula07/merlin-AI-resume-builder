@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function Contact() {
+export default function Contact({params,setParam}) {
   return (
     <div className='w-full '>
          <h5 className='text-2xl font-semibold'>Contact Info</h5>
@@ -8,27 +8,63 @@ export default function Contact() {
          <div className='grid grid-flow-row grid-cols-2  gap-4 gap-y-8 py-4'>
              {[
                 {
-                    label:"First name"
+                    label:"First name",
+                    onChange:(e)=>setParam(
+                        {
+                            ...params,
+                            firstname:e.target.value
+                        }
+                    )
 
                 },
                 {
-                    label:"Last name"
+                    label:"Last name",
+                    onChange:(e)=>setParam(
+                        {
+                            ...params,
+                        lastname:e.target.value
+                        }
+                    )
 
                 },
                 {
-                    label:"Email address"
+                    label:"Email address",
+                    onChange:(e)=>setParam(
+                        {
+                            ...params,
+                            email:e.target.value
+                        }
+                    )
 
                 },
                 {
-                    label:"Phone Number"
+                    label:"Phone Number",
+                    onChange:(e)=>setParam(
+                        {
+                            ...params,
+                            phone:e.target.value
+                        }
+                    )
 
                 },
                 {
-                    label:"Country"
+                    label:"Country",
+                    onChange:(e)=>setParam(
+                        {
+                            ...params,
+                            country:e.target.value
+                        }
+                    )
 
                 },
                 {
-                    label:"City"
+                    label:"City",
+                    onChange:(e)=>setParam(
+                        {
+                            ...params,
+                            city:e.target.value
+                        }
+                    )
 
                 }
 
@@ -36,7 +72,9 @@ export default function Contact() {
                  return(
                     <div className='flex flex-col space-y-3'>
                          <label>{field?.label}</label>
-                         <input className='py-3 px-4 border rounded-lg'/>
+                         <input className='py-3 px-4 border rounded-lg'
+                            onChange={(e)=>field?.onChange(e)}
+                         />
                     </div>
                  )
 

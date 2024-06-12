@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function Education() {
+export default function Education({params,setParam}) {
   return (
     <div className='w-full '>
          <h5 className='text-2xl font-semibold'>Education</h5>
@@ -8,27 +8,63 @@ export default function Education() {
          <div className='grid grid-flow-row grid-cols-2  gap-4 gap-y-8 py-4'>
              {[
                 {
-                    label:"School Name"
+                    label:"School Name",
+                    onChange:(e)=>setParam(
+                        {
+                            ...params,
+                            schoolNmae:e.target.value
+                        }
+                    )
 
                 },
                 {
-                    label:"Degree"
+                    label:"Degree",
+                    onChange:(e)=>setParam(
+                        {
+                            ...params,
+                            degree:e.target.value
+                        }
+                    )
 
                 },
                 {
-                    label:"School location"
+                    label:"School location",
+                    onChange:(e)=>setParam(
+                        {
+                            ...params,
+                            schoolLocation:e.target.value
+                        }
+                    )
 
                 },
                 {
-                    label:"Field of study"
+                    label:"Field of study",
+                    onChange:(e)=>setParam(
+                        {
+                            ...params,
+                            studyField:e.target.value
+                        }
+                    )
 
                 },
                 {
-                    label:"Graduate Date(month)"
+                    label:"Graduate Date(month)",
+                    onChange:(e)=>setParam(
+                        {
+                            ...params,
+                            gradMonth:e.target.value
+                        }
+                    )
 
                 },
                 {
-                    label:"Graduate Date(Year)"
+                    label:"Graduate Date(Year)",
+                    onChange:(e)=>setParam(
+                        {
+                            ...params,
+                            gradYr:e.target.value
+                        }
+                    )
 
                 }
 
@@ -36,7 +72,9 @@ export default function Education() {
                  return(
                     <div className='flex flex-col space-y-3'>
                          <label>{field?.label}</label>
-                         <input className='py-3 px-4 border rounded-lg'/>
+                         <input className='py-3 px-4 border rounded-lg'
+                           onChange={(e)=>field?.onChange(e)}
+                         />
                     </div>
                  )
 
