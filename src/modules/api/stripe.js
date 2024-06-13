@@ -51,8 +51,8 @@ export const stripe = new Stripe(
                     },
                 ],
                 mode: 'payment',
-                success_url: `http://localhost:5173/fallback`,
-                cancel_url: `http://localhost:5173/fallback`
+                success_url: `https://merlin-resume.vercel.app/fallback`,
+                cancel_url: `https://merlin-resume.vercel.app/fallback`
               });
             
     
