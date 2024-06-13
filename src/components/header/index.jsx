@@ -15,16 +15,19 @@ export default function Header() {
 
                   <div className='flex items-center justify-between justify-center w-2/5'>
                       {[
-                        {name:"About"},
-                        {name:"Pricing"},
-                        {name:"How it works"},
-                        {name:"Solution"},
-                        {name:"Features"},
+                        {name:"About",link:"/"},
+                        {name:"Pricing",link:"/"},
+                        {name:"How it works",link:"/"},
+                        {name:"Solution",link:"/resume"},
+                        {name:"Features",link:"/"},
 
 
                       ]?.map((nav)=>{
                          return(
-                            <h5>{nav?.name}</h5>
+                          <Link to={nav?.link}>
+                               <h5>{nav?.name}</h5>
+                          </Link>
+                           
                          )
                       })
 

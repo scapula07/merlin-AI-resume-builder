@@ -3,6 +3,7 @@ import { BsMenuUp } from 'react-icons/bs'
 import text from "../../assets/text2.png"
 import cards from "../../assets/cards.png"
 import frame from "../../assets/frame.png"
+import { Link } from 'react-router-dom'
 export default function Top() {
   return (
     <div className='w-full bg-black' style={{height:"570px"}}>
@@ -18,7 +19,10 @@ export default function Top() {
                                           </div>
                                           <div className='flex py-6 items-center '>
                                               <div className='pt-10'>
+                                                <Link to="/resume">
+                                          
                                                   <button className='px-8 py-2 rounded-full' style={{ background: "linear-gradient(100.52deg, #66C9FA 15.93%, #3C7794 141.45%)"}}>Get started</button>
+                                                  </Link>
                                               </div>
                                
                                                <img src={text} className="" />
