@@ -19,7 +19,9 @@ export default function Fallback() {
 
       const componentRef = useRef();
       const handlePrint = useReactToPrint({
+        
         content: () => componentRef.current,
+
       });
 
     const session= localStorage.getItem("stripe-session");
@@ -87,7 +89,7 @@ export default function Fallback() {
 
                          <div className='flex flex-col space-y-3 w-full py-4'>
                           {paid?
-                                <button className='bg-black text-white py-2 rounded-full w-full' onClick={handlePrint}>Download</button>
+                                <button className='bg-black text-white py-2 rounded-full w-full' onClick={()=>handlePrint() || localStorage.clear()}>Download</button>
                                 :
                                 <Link to={"/resume"}>
                                          <button className='bg-black text-white py-2 rounded-full w-full' >Go back</button>
@@ -96,8 +98,10 @@ export default function Fallback() {
                                 
 
                           }
-                            
-                               <button className='bg-white text-black py-2 rounded-full w-full border border-black'>Edit</button>
+                                  <Link to={"/resume"}>
+                                  <button className='bg-white text-black py-2 rounded-full w-full border border-black'>Edit</button>
+                                  </Link>
+                              
 
                          </div>
                        
