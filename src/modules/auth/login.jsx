@@ -6,7 +6,7 @@ export default function Login() {
   return (
     <Layout>
                  <div className='pt-20 w-full flex justify-center'>
-                         <div className='w-3/5 flex justify-center'>
+                         <div className='w-2/5 flex justify-center'>
                                <div className='flex flex-col w-full items-center space-y-3 w-2/3'>
                                         <div className='flex flex-col items-center space-y-4 w-full'>
                                             <h5 className='text-2xl font-semibold '>Log in to Account</h5>

@@ -18,6 +18,10 @@ export default function Partners() {
                 </p>
 
            </div>
+
+           <div className=''>
+
+           </div>
          
     </div>
   )

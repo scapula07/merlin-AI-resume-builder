@@ -3,7 +3,8 @@ import Layout from '../layout'
 import Mid from './mid'
 import Top from './top'
 import Partners from './partners'
-
+import Social from './social'
+import Sub from './sub'
 
 export default function Home() {
   return (
@@ -13,6 +14,8 @@ export default function Home() {
           <Top />
           <Mid />
           <Partners />
+          <Social />
+          <Sub />
 
       </div>
 
