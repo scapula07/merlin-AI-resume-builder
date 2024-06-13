@@ -5,10 +5,17 @@ import { useState } from 'react';
 import { FaXmark } from "react-icons/fa6";
 import { ClipLoader } from 'react-spinners';
 import { useReactToPrint } from 'react-to-print';
-
+import { BsDot } from "react-icons/bs";
+import { Link } from 'react-router-dom';
 export default function Fallback() {
       const [paid,setpaid]=useState(false)
       const [result,setresult]=useState(false)
+      const [params,setParam]=useState({
+        firstname:"John",
+        lastname:"Doe",
+        experiences:[],
+        summary:""
+         })
 
       const componentRef = useRef();
       const handlePrint = useReactToPrint({
@@ -16,7 +23,9 @@ export default function Fallback() {
       });
 
     const session= localStorage.getItem("stripe-session");
+    const doc= localStorage.getItem("doc-params");
       useEffect(()=>{
+             setParam(JSON.parse(doc))
            const checkPaymentStatus=async()=>{
                   try{
                     const res=await getPaymentStatus(JSON.parse(session)?.id)
@@ -35,7 +44,12 @@ export default function Fallback() {
     <div className='w-full flex justify-center pt-10'>
            <div className='w-3/5 flex items-center space-x-10'>
                 <div className='w-1/2'>
-                    <PDF ref={componentRef}/>
+                    <PDF 
+                      ref={componentRef}
+                      params={params}
+                      setParam={setParam}
+
+                    />
 
                 </div>
                 <div className='w-1/2 relative'>
@@ -72,7 +86,17 @@ export default function Fallback() {
                          </div>
 
                          <div className='flex flex-col space-y-3 w-full py-4'>
-                               <button className='bg-black text-white py-2 rounded-full w-full' onClick={handlePrint}>Download</button>
+                          {paid?
+                                <button className='bg-black text-white py-2 rounded-full w-full' onClick={handlePrint}>Download</button>
+                                :
+                                <Link to={"/resume"}>
+                                         <button className='bg-black text-white py-2 rounded-full w-full' >Go back</button>
+                                </Link>
+                           
+                                
+
+                          }
+                            
                                <button className='bg-white text-black py-2 rounded-full w-full border border-black'>Edit</button>
 
                          </div>
@@ -92,28 +116,97 @@ export default function Fallback() {
 
 
 export const PDF = React.forwardRef((props, ref) => {
+       console.log(props,"prop")
+       const params=props.params
     return(
-        <div className='w-full flex justify-center'>
-        <div className='w-full h-96 relative' style={{background:"#e3e2de",height:"600px"}}>
-           <div className='w-full h-full px-12 py-8 text-slate-400 ' ref={ref} style={{color:"#9d9c9a"}}>
-                   <div className='border-b-2 border-slate-700 pb-4 flex flex-col space-y-3 '>
-                         <h5 className='text-2xl font-semibold'>JANE SMITHERTON</h5>
-                         <h5 className='text-sm font-bold'>FRONTEND ENGINEER</h5>
-                         <p className='text-sm font-light'>I am an experienced Frontend engineer seeking a full-time position in the field of web development and design, where I can apply my knowledge and skills for continuous improvement.</p>
+      <div className='w-full flex justify-center'>
+      <div className='w-full  relative' style={{background:"#fcfbf7",height:"600px"}}>
+         <div className='w-full h-full px-12 py-12 text-slate-400 flex space-y-6 flex-col' ref={ref} style={{color:"#9d9c9a"}}>
+         <div className='border-b-2 border-slate-700 pb-4 flex flex-col space-y-3 w-full '>
+                            <h5 className='text-2xl font-semibold'>{params?.firstname?.toUpperCase() + " " + params?.lastname?.toUpperCase()}</h5>
+                            <h5 className='text-sm font-bold'>FRONTEND ENGINEER</h5>
+                            <p className='text-sm font-light'>{params?.summary}</p>
 
-                   </div>
+                      </div>
+                      <div className='border-b border-black pb-4 flex  py-4 w-full'>
+                       <h5 className=' font-semibold text-sm w-1/2' style={{color:"#9d9c9a"}}>SKILLS</h5>
+                       <div className='flex flex-col  w-1/2'>
+                          {["Text","Text"]?.map((skill)=>{
+                               return(
+                                  <h5 className='flex items-center text-sm font-light'>
+                                       <BsDot className='text-black font-semibold text-lg'/>
+                                       <span>{skill}</span>
+                                      
+                                  </h5>
+                               )
+                          })
 
-                   <div className='border-b-2 border-slate-700 pb-4 flex  '>
+                          }
+
+                       </div>
+
+                      
+                    
 
 
-                   </div>
+                 </div>
+
+                 <div className='border-b border-black pb-4 flex  py-4 w-full'>
+                              <h5 className=' font-semibold text-sm w-1/2' style={{color:"#9d9c9a"}}>Education</h5>
+                              <div className='flex flex-col  w-1/2'>
+                                    <div className='flex flex-col w-full '>
+                                       <h5 className=' font-semibold text-sm pb-3'>{params?.schoolName?.toUpperCase()}</h5>
+                                       <p className='text-sm font-light'>
+                                          {params?.degree},{params?.studyField}
+
+                                       </p>
+                                       <h5 className='text-sm font-light'>{params?.schoolLocation} | {params?.gradYr} </h5>
+
+                                    </div>
 
 
-           </div>
-       
+                              </div>
 
-       </div>
-      
+                       </div>
+
+                       <div className='border-b border-black pb-4 flex  py-4 w-full'>
+                              <h5 className=' font-semibold text-sm w-1/2' style={{color:"#9d9c9a"}}>Experience</h5>
+                              <div className='flex flex-col  w-1/2'>
+                                    <div className='flex flex-col'>
+                                       <h5 className=' font-semibold pb-3'>Frontend Engineer</h5>
+                                       <p className='text-sm font-light'>
+                                          Bacholor of science
+
+                                       </p>
+
+                                    </div>
+
+
+                              </div>
+
+                       </div>
+
+                      
+                       <div className='border-b border-black pb-4 flex  py-4 w-full'>
+                              <h5 className=' font-semibold text-sm w-1/2' style={{color:"#9d9c9a"}}>Contact</h5>
+                              <div className='flex flex-col  w-1/2'>
+                                    <div className='flex flex-col font-light text-sm'>
+                                       <h5>{params?.email}</h5>
+                                       <h5>{params?.country},{params?.city}</h5>
+                                       <h5>{params?.phone}</h5>
+                                    </div>
+
+
+                              </div>
+
+                       </div>
+
+
+         </div>
+     
+
+     </div>
+    
 
 </div>
     )

@@ -17,7 +17,7 @@ export const stripe = new Stripe(
     );
     
     
-   export  const payment=async()=>{
+   export  const payment=async(params)=>{
     
     
         const hostname =window.location.host
@@ -62,6 +62,7 @@ export const stripe = new Stripe(
                    
                     localStorage.clear();
                     localStorage.setItem('stripe-session',JSON.stringify(session));
+                    localStorage.setItem('doc-params',JSON.stringify(params));
                      window.location.href = session?.url;
                 
     

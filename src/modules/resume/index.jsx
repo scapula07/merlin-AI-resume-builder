@@ -11,6 +11,7 @@ import Preview from './preview';
 import { IoIosArrowBack } from "react-icons/io";
 import Download from './download';
 
+
 export default function Resume() {
     const [next,setNext]=useState(1)
     const [params,setParam]=useState({
@@ -122,7 +123,10 @@ export default function Resume() {
                            </div>
                                }
                                {
-                                next==7&& <Download />
+                                next==7&& <Download 
+                                            params={params}
+                                            setParam={setParam}
+                                />
                                }
                                
 
