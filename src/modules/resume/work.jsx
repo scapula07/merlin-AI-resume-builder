@@ -71,11 +71,11 @@ export default function Work({params,setParam}) {
                ]?.map((field)=>{
                  return(
                     <div className='flex flex-col space-y-3'>
-                         <label>{field?.label}</label>
-                         <input className='py-3 px-4 border rounded-lg'
-                               onChange={(e)=>field?.onChange(e)}
-                         />
-                    </div>
+                    <label className='text-sm'>{field?.label}</label>
+                    <input className='py-2.5 text-sm text-slate-500 px-4 border rounded-lg'
+                       onChange={(e)=>field?.onChange(e)}
+                    />
+               </div>
                  )
 
              })

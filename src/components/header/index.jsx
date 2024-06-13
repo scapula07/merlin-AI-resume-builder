@@ -3,8 +3,10 @@ import logo from "../../assets/logo.png"
 import { Link } from 'react-router-dom'
 
 export default function Header() {
+  const pathname =window.location.pathname
+  console.log(pathname,"pathname")
   return (
-    <div className='w-full px-10 py-6 bg-white'>
+    <div className={pathname ==="/"?'w-full px-10 py-6 bg-black text-white':"w-full px-10 py-6 bg-white "}>
            <div className='flex w-full items-center justify-between'> 
                   <div className='flex justify-center w-1/6'>
                       <img src={logo} className="h-14 w-14"/>
@@ -34,8 +36,8 @@ export default function Header() {
                   <h5>Login</h5>
                   </Link>
                   <Link to={"/signup"}>
-                    <button className='bg-black py-2.5 px-4 rounded-full text-white text-sm'>Register</button>
-                    </Link>
+                    <button className={pathname ==="/"?'bg-white  py-2.5 px-4 rounded-full text-black text-sm':'bg-black py-2.5 px-4 rounded-full text-white text-sm'}>Register</button>
+                  </Link>
                      
 
                 

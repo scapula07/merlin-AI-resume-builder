@@ -13,7 +13,10 @@ import Download from './download';
 
 export default function Resume() {
     const [next,setNext]=useState(1)
-    const [params,setParam]=useState({})
+    const [params,setParam]=useState({
+                                    firstname:"John",
+                                    lastname:"Doe"
+                                     })
 
     console.log(next,"params")
 
@@ -53,8 +56,8 @@ export default function Resume() {
                             ]?.map((tab)=>{
                                     console.log(tab?.no==next,'here')
                                     return(
-                                        <h5 className={tab?.no==next?'flex space-x-2 items-center text-blue-500':'flex space-x-2 items-center text-slate-600 '} onClick={()=>tab?.onClick(tab?.no)}>
-                                            <span className='font-semibold '>{tab?.name}</span>
+                                        <h5 className={tab?.no==next?'flex space-x-2 items-center text-blue-500 font-semibold':'flex space-x-2 items-center text-slate-600 font-light '} onClick={()=>tab?.onClick(tab?.no)}>
+                                            <span className=' '>{tab?.name}</span>
                                             <IoIosArrowForward className='font-semibold ' /> 
 
                                         </h5>

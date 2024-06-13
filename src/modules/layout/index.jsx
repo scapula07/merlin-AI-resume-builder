@@ -4,7 +4,7 @@ import Header from '../../components/header'
 export default function Layout({children}) {
   return (
     <div className='w-full h-full relative '>
-         <div className='fixed w-full '>
+         <div className='fixed w-full z-50 '>
             <Header />
          </div>
         <div className='w-full pt-20 h-full'>
