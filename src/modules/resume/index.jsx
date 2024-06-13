@@ -16,7 +16,8 @@ export default function Resume() {
     const [params,setParam]=useState({
                                     firstname:"John",
                                     lastname:"Doe",
-                                    experiences:[]
+                                    experiences:[],
+                                    summary:""
                                      })
 
     console.log(next,"params")
