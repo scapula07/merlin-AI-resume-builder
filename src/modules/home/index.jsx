@@ -26,7 +26,7 @@ export default function Home() {
               "Careers"
             ].map((nav)=>{
                return(
-                <h5 className='text-black font-light text-sm'>{nav}</h5>
+                <h5 className='text-black font-light md:text-sm text-xs'>{nav}</h5>
                )
             })
 

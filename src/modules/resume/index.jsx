@@ -31,9 +31,10 @@ export default function Resume() {
            setParam(JSON.parse(doc))
            if(resume){
              setParam({
+                ...params,
                 email:resume?.email,
                 phone:resume?.phone,
-                
+
              })
            }
     },[])
@@ -41,7 +42,7 @@ export default function Resume() {
   return (
     <Layout>
 
-            <div className='px-16 w-full h-full pt-14 pb-10'>
+            <div className='md:px-16 px-4 w-full h-full md:pt-14 pt-10 pb-10 overflow-x-hidden'>
                   <div className='w-full'>
                        <h5 className='font-semibold text-xl'>Fill the information in the order to complete your resume</h5>
                        <h5 className=' font-light text-slate-700'>This will save you the stress of finding a template</h5>
@@ -74,7 +75,7 @@ export default function Resume() {
                             ]?.map((tab)=>{
                                     console.log(tab?.no==next,'here')
                                     return(
-                                        <h5 className={tab?.no==next?'flex space-x-2 items-center text-blue-500 font-semibold':'flex space-x-2 items-center text-slate-600 font-light '} onClick={()=>tab?.onClick(tab?.no)}>
+                                        <h5 className={tab?.no==next?'flex space-x-2 items-center text-blue-500 font-semibold ':'flex space-x-2 items-center text-slate-600 font-light '} onClick={()=>tab?.onClick(tab?.no)}>
                                             <span className=' '>{tab?.name}</span>
                                             <IoIosArrowForward className='font-semibold ' /> 
 
@@ -96,8 +97,8 @@ export default function Resume() {
                          {next !=7&&
 
                        
-                           <div className='flex w-full space-x-14'>
-                                 <div className='w-3/5 py-6'>
+                           <div className='flex md:flex-row flex-col  w-full space-x-14'>
+                                 <div className='md:w-3/5 w-full py-6'>
                                     {next==1&&<Contact 
                                                   params={params}
                                                   setParam={setParam}
@@ -124,7 +125,7 @@ export default function Resume() {
                                              />}
                                  </div>
                                  
-                                  <div className='w-2/5 py-6'>
+                                  <div className='w-2/5 py-6 md:flex hidden'>
                                        <Preview
                                                params={params}
                                                setParam={setParam}

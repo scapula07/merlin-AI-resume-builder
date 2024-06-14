@@ -31,11 +31,11 @@ export default function Skills({params,setParam}) {
      }
   return (
     <div className='w-full '>
-         <h5 className='text-2xl font-semibold'>Skills</h5>
+         <h5 className='md:text-2xl text-sm font-semibold'>Skills</h5>
 
          <div className='w-full flex flex-col py-8 flex flex-col space-y-2'>
-                <h5 className='text-sm font-semibold text-slate-600'>In bulleted points, tell us what you can do</h5>
-                <div className='w-3/5 border h-56  rounded-lg flex flex-col px-6 py-3 justify-between'>
+                <h5 className='md:text-sm text-xs font-semibold text-slate-600'>In bulleted points, tell us what you can do</h5>
+                <div className='md:w-3/5 w-full border h-56  rounded-lg flex flex-col px-6 py-3 justify-between'>
                       {/* <ol className='h-full h-44 overflow-y-scroll text-sm flex flex-col'>
 
                           {params?.skills?.map((skill)=>{

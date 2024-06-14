@@ -6,14 +6,14 @@ export default function Header() {
   const pathname =window.location.pathname
   console.log(pathname,"pathname")
   return (
-    <div className={pathname ==="/"?'w-full px-10 py-6 bg-black text-white':"w-full px-10 py-6 bg-white "}>
+    <div className={pathname ==="/"?'w-full px-10 md:py-6 bg-black text-white py-2':"w-full px-10 md:py-6  py-2 bg-white overflow-x-hidden"}>
            <div className='flex w-full items-center justify-between'> 
-                  <div className='flex justify-center w-1/6'>
-                      <img src={logo} className="h-14 w-14"/>
+                  <div className='flex justify-center md:w-1/6  '>
+                      <img src={logo} className="md:h-14 md:w-14 h-10 w-10"/>
 
                   </div>
 
-                  <div className='flex items-center justify-between justify-center w-2/5'>
+                  <div className='hidden items-center justify-between justify-center w-2/5 md:flex'>
                       {[
                         {name:"About",link:"/"},
                         {name:"Pricing",link:"/"},
@@ -34,7 +34,7 @@ export default function Header() {
                       }
                     
                  </div>
-                <div className="w-1/3 flex items-center space-x-4 justify-end ">
+                <div className="md:w-1/3 md:flex hidden items-center space-x-4 md:justify-end ">
                   <Link to={"/login"}>
                   <h5>Login</h5>
                   </Link>

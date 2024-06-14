@@ -39,11 +39,11 @@ export default function Summary({params,setParam}) {
   return (
     <>
     <div className='w-full '>
-         <h5 className='text-2xl font-semibold'>Summary</h5>
+         <h5 className='md:text-2xl text-sm font-semibold'>Summary</h5>
 
          <div className='w-full flex flex-col py-8 flex flex-col space-y-2'>
-                <h5 className='text-sm font-semibold text-slate-600'>Briefly describe the value you bring through your skill</h5>
-                <div className='w-3/5 border h-56 rounded-lg flex flex-col px-6 py-3 justify-between'>
+                <h5 className='md:text-sm text-xs font-semibold text-slate-600'>Briefly describe the value you bring through your skill</h5>
+                <div className='md:w-3/5 w-full border h-56 rounded-lg flex flex-col px-6 py-3 justify-between'>
                 {/* <div className='h-full h-44 overflow-y-scroll text-sm text-slate-600'>
 
                     {params?.summary}
@@ -73,7 +73,7 @@ export default function Summary({params,setParam}) {
 
     </div>
 
-    <Modal trigger={trigger}  cname="w-2/5 py-2 h-80  px-4 rounded-lg  ">
+    <Modal trigger={trigger}  cname="md:w-2/5 w-full py-2 h-80  px-4 rounded-lg  ">
            <div className='flex flex-col bg-white w-full h-full px-4 py-3 rounded-sm'>
                 <div className='flex justify-between w-full'>
                 {params?.summary?.length >0?

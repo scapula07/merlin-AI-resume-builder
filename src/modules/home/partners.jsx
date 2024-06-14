@@ -2,9 +2,9 @@ import React from 'react'
 
 export default function Partners() {
   return (
-    <div className='bg-white w-full flex justify-center  py-24' style={{height:"570px"}}>
-           <div className='w-3/5'>
-                <p className='text-6xl font-bold leading'>
+    <div className='bg-white w-full flex justify-center  py-24 px-4 md:px-0' style={{height:"570px"}}>
+           <div className='md:w-3/5 w-full'>
+                <p className='md:text-6xl text-3xl font-bold leading'>
                     <span className='text-black'>
                         Our Ai helps you to increase  your 
                         chances of getting hired by your dream

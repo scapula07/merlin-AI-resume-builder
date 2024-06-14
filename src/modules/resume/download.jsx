@@ -18,16 +18,16 @@ export default function Download({params,setParam}) {
   return (
     <div className='w-full flex justify-center pt-10'>
            <div className='w-3/5 flex items-center space-x-10'>
-                <div className='w-4/5'>
+                <div className='w-4/5 md:flex hidden'>
                     <PDF 
                            params={params}
                            setParam={setParam}
                     />
 
                 </div>
-                <div className='w-1/2'>
-                    <div className='flex flex-col items-center'>
-                          <div className='flex flex-col space-y-3'>
+                <div className='md:w-1/2 w-full'>
+                    <div className='flex flex-col items-center w-full'>
+                          <div className='flex flex-col space-y-3 w-full'>
                                 <h5 className='text-4xl font-semibold'>Here’s Your Resume!</h5>
                                 <h5 className='text-slate-600 font-light '>You can still make changes to your previously filled data</h5>
                          </div>

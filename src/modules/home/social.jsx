@@ -9,7 +9,7 @@ export default function Social() {
   return (
     <div className='w-full flex justify-center py-24' style={{background:"#fafafa"}}>
             <div className='w-3/5 flex flex-col items-center'>
-                  <h5 className='text-6xl '>All platform connect to MG</h5>
+                  <h5 className='lg:text-6xl text-xl'>All platform connect to MG</h5>
 
                   <div className='flex items-center py-10 space-x-4'>
                     {[
@@ -31,7 +31,7 @@ export default function Social() {
 
                   </div>
 
-                  <div className='flex flex-col w-full items-center'>
+                  <div className='md:flex hidden flex-col w-full items-center'>
                   {[
                      img1,img2,img3
                     ]?.map((img)=>{

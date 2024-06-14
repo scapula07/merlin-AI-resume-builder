@@ -3,9 +3,9 @@ import React from 'react'
 export default function Education({params,setParam}) {
   return (
     <div className='w-full '>
-         <h5 className='text-2xl font-semibold'>Education</h5>
+         <h5 className='md:text-2xl text-sm font-semibold'>Education</h5>
 
-         <div className='grid grid-flow-row grid-cols-2  gap-4 gap-y-8 py-4'>
+         <div className='md:grid md:grid-flow-row md:grid-cols-2  md:gap-4 md:gap-y-8 flex flex-col py-4'>
              {[
                 {
                     label:"School Name",

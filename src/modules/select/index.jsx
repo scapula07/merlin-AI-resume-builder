@@ -140,8 +140,8 @@ export default function Select() {
         
   return (
     <Layout>
-             <div className='pt-20 w-full flex justify-center'>
-                    <div className='flex w-3/5 space-x-10'>
+             <div className='pt-20 w-full flex justify-center px-4 md:px-0'>
+                    <div className='flex md:flex-row flex-col lg:w-3/5 w-full md:space-x-10 space-y-6 md:space-y-0'>
                            <Link to="/resume">
                            <div className='border flex flex-col py-4 px-4 rounded-lg space-y-4'>
                                    <div className='flex justify-end'>

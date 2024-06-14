@@ -9,7 +9,7 @@ export default function Layout({children}) {
          <div className='fixed w-full z-50 '>
             <Header />
          </div>
-        <div className='w-full pt-20 h-full'>
+        <div className='w-full md:pt-20 h-full  pt-10 overflow-x-hidden'>
             {children}
 
         </div>
