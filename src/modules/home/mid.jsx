@@ -4,6 +4,7 @@ import text2 from "../../assets/text3.png"
 import { IoClose } from "react-icons/io5";
 import { BiSolidZap } from "react-icons/bi";
 import { FiZap } from "react-icons/fi";
+import { Link } from 'react-router-dom';
 export default function Mid() {
   return (
     <div className='w-full  py-24 flex justify-center' style={{ background: "linear-gradient(100.52deg, #66C9FA 15.93%, #3C7794 141.45%)",height:"450px"}}>
@@ -13,7 +14,8 @@ export default function Mid() {
                  <div className='flex items-center space-x-4 py-10'>
                  <img src={text} className="" />
                           <div className='bg-white rounded-lg px-16 py-10 flex items-center justify-center'>
-                             <button className='flex items-center bg-black px-4 py-2.5 text-white text-sm space-x-3 rounded-lg'>
+                            <Link to="/select">
+                            <button className='flex items-center bg-black px-4 py-2.5 text-white text-sm space-x-3 rounded-lg'>
                                  <FiZap
                                      className='rounded-full text-black'
                                     style={{ background: "linear-gradient(100.52deg, #66C9FA 15.93%, #3C7794 141.45%)"}}
@@ -21,6 +23,9 @@ export default function Mid() {
                                   <span>Upload Resume</span>
                                   <IoClose />
                              </button>
+                            
+                            </Link>
+                           
 
                         </div>
                  <img src={text2} className="" />

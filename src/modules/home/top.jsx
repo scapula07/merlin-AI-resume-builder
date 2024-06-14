@@ -19,7 +19,7 @@ export default function Top() {
                                           </div>
                                           <div className='flex py-6 items-center '>
                                               <div className='pt-10'>
-                                                <Link to="/resume">
+                                                <Link to="/select">
                                           
                                                   <button className='px-8 py-2 rounded-full' style={{ background: "linear-gradient(100.52deg, #66C9FA 15.93%, #3C7794 141.45%)"}}>Get started</button>
                                                   </Link>
