@@ -9,7 +9,7 @@ import Login from './modules/auth/login'
 import Signup from './modules/auth/signup'
 
 import Fallback from './modules/fallback/success'
-
+import Select from './modules/select'
 function App() {
   const [count, setCount] = useState(0)
 
@@ -21,7 +21,7 @@ function App() {
                   <Route exact path="/login"  element={<Login/>} />
                   <Route exact path="/signup"  element={<Signup/>} />
                   <Route exact path="/fallback"  element={<Fallback/>} />
-                  {/* <Route exact path="/failed"  element={<Failed/>} /> */}
+                  <Route exact path="/select"  element={<Select/>} />
               </Routes>
 
   

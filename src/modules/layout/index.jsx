@@ -1,6 +1,8 @@
 import React from 'react'
 import Header from '../../components/header'
 
+import { Toaster } from 'react-hot-toast'
+
 export default function Layout({children}) {
   return (
     <div className='w-full h-full relative '>
@@ -12,7 +14,7 @@ export default function Layout({children}) {
 
         </div>
 
-
+      <Toaster />
     </div>
   )
 }
