@@ -10,10 +10,13 @@ import Summary from './summary';
 import Preview from './preview';
 import { IoIosArrowBack } from "react-icons/io";
 import Download from './download';
-
+import { useLocation,useParams} from "react-router-dom";
 
 export default function Resume() {
     const [next,setNext]=useState(1)
+    const location =useLocation()
+    const resume=location?.state
+    console.log(resume,"resume")
     const [params,setParam]=useState({
                                     firstname:"John",
                                     lastname:"Doe",
@@ -26,6 +29,13 @@ export default function Resume() {
     const doc= localStorage.getItem("doc-params");
     useEffect(()=>{
            setParam(JSON.parse(doc))
+           if(resume){
+             setParam({
+                email:resume?.email,
+                phone:resume?.phone,
+                
+             })
+           }
     },[])
 
   return (
