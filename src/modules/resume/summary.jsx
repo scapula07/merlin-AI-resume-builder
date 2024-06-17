@@ -15,7 +15,7 @@ export default function Summary({params,setParam}) {
   const [text,setText]=useState("")
 
   function convertToArray(str) {
-    // Use regex to split the string by digits followed by a period and a space
+  //  // Use regex to split the string by digits followed by a period and a space
     const items = str.split(/\d+\.\s+/).filter(Boolean);
     return items;
   }
@@ -44,12 +44,12 @@ export default function Summary({params,setParam}) {
          <div className='w-full flex flex-col py-8 flex flex-col space-y-2'>
                 <h5 className='md:text-sm text-xs font-semibold text-slate-600'>Briefly describe the value you bring through your skill</h5>
                 <div className='md:w-3/5 w-full border h-56 rounded-lg flex flex-col px-6 py-3 justify-between'>
-                {/* <div className='h-full h-44 overflow-y-scroll text-sm text-slate-600'>
+                    <div className='h-full overflow-y-scroll text-sm text-slate-600'>
 
-                    {params?.summary}
+                      {params?.summary}
 
-                      </div> */}
-                       <textarea placeholder='Enter your summary' className='text-xs font-semibold h-44 px-4 py-2 outline-none text-slate-600'
+                      </div>
+                       <textarea placeholder='Enter your summary' className='text-xs font-semibold  px-4 py-2 outline-none text-slate-600'
                        onChange={(e)=>setParam({...params,summary:e.target.value})}
                        />
                     
@@ -99,7 +99,7 @@ export default function Summary({params,setParam}) {
                         </div>
                           :
                           <textarea placeholder='Enter your prompt' className='text-sm font-semibold h-44 px-4 py-2 outline-none text-slate-700 w-full'
-                          onClick={(e)=>setText(`${e.target.value}`)}
+                          onClick={(e)=>setText(`${e.target.value},Generate a concise 5-sentence summary for a professional resume. The summary should highlight key skills, significant achievements, relevant experience, and professional goals. The candidate has a background in [your industry/field], with expertise in [specific skills or areas of expertise]. They have worked at [mention notable companies or roles], where they accomplished [mention specific achievements or contributions]. The summary should convey a strong professional presence and be tailored to attract potential employers in [desired industry/role.`)}
                         />
 
 

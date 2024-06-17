@@ -20,15 +20,17 @@ export default function Resume() {
     const [params,setParam]=useState({
                                     firstname:"John",
                                     lastname:"Doe",
-                                    experiences:[],
+                                  
                                     summary:""
                                      })
+const [works,setWork]=useState({experiences:[]})
+const [experiences,setExp]=useState([])
 
-    console.log(next,"params")
+    console.log(works,"params")
 
     const doc= localStorage.getItem("doc-params");
     useEffect(()=>{
-           setParam(JSON.parse(doc))
+           setParam({...params,...JSON.parse(doc)})
            if(resume){
              setParam({
                 ...params,
@@ -106,10 +108,18 @@ export default function Resume() {
                                     {next==2&&<Work 
                                                     params={params}
                                                     setParam={setParam}
+                                                    works={works}
+                                                    setWork={setWork}
                                             />}
                                     {next==3&&<Experience
                                                      params={params}
                                                      setParam={setParam}
+                                                     works={works}
+                                                     setWork={setWork}
+                                                     next={next}
+                                                     setNext={setNext}
+                                                     experiences={experiences}
+                                                     setExp={setExp}
                                                   />}
                                     {next==4&&<Education 
                                                       params={params}
@@ -129,6 +139,7 @@ export default function Resume() {
                                        <Preview
                                                params={params}
                                                setParam={setParam}
+                                               experiences={experiences}
                                         />
 
                                   </div>

@@ -2,7 +2,7 @@ import React from 'react'
 import { BsDot } from "react-icons/bs";
 
 
-export default function Preview({params,setParam}) {
+export default function Preview({params,setParam, experiences}) {
   return (
     <div className='w-full flex justify-center'>
              <div className=' opacity-60 relative' style={{background:"#e3e2de",width:"450px"}}>
@@ -56,15 +56,30 @@ export default function Preview({params,setParam}) {
 
                          <div className='border-b border-black pb-4 flex  py-4 w-full'>
                                 <h5 className=' font-semibold text-sm w-1/2' style={{color:"#9d9c9a"}}>Experience</h5>
-                                <div className='flex flex-col  w-1/2'>
-                                      <div className='flex flex-col'>
-                                         <h5 className=' font-semibold pb-3'>Frontend Engineer</h5>
-                                         <p className='text-sm font-light'>
-                                            Bacholor of science
+                                <div className='flex flex-col  w-1/2 space-y-4'>
+                                   {
+                                    experiences?.map((exp)=>{
+                                        return(
+                                          <div className='flex flex-col'>
+                                                  <h5 className=' font-semibold text-sm '>{exp?.job}</h5>
+                                                  <h5 className='font-light text-xs'>{exp?.employer},{exp?.startDate} - {exp?.endDate}</h5>
+                                                <div className='flex flex-col py-2'>
+                                                    {exp?.experiences?.map((experience)=>{
+                                                        return(
+                                                            <p className='font-light text-xs'>{experience}</p>
+                                                        )
+                                                   
+                                                    })
 
-                                         </p>
-
-                                      </div>
+                                                    }
+                                                </div>
+                                                <h5 className='font-light text-xs'>{exp?.jobcountry},{exp?.jobcity} </h5>
+   
+                                          </div>
+                                        )
+                                    })
+                                   }
+                                  
 
 
                                 </div>

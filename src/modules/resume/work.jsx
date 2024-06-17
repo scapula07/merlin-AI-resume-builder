@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function Work({params,setParam}) {
+export default function Work({params,setParam,works,setWork}) {
   return (
     <div className='w-full '>
          <h5 className='md:text-2xl text-sm font-semibold'>Work Experience</h5>
@@ -9,19 +9,19 @@ export default function Work({params,setParam}) {
              {[
                 {
                     label:"Job title",
-                    onChange:(e)=>setParam(
+                    onChange:(e)=>setWork(
                         {
-                            ...params,
-                        job:e.target.value
+                         ...works,
+                         job:e.target.value
                         }
                     )
 
                 },
                 {
                     label:"Employer",
-                    onChange:(e)=>setParam(
+                    onChange:(e)=>setWork(
                         {
-                            ...params,
+                            ...works,
                         employer:e.target.value
                         }
                     )
@@ -29,9 +29,9 @@ export default function Work({params,setParam}) {
                 },
                 {
                     label:"Country",
-                    onChange:(e)=>setParam(
+                    onChange:(e)=>setWork(
                         {
-                            ...params,
+                            ...works,
                         jobcountry:e.target.value
                         }
                     )
@@ -39,9 +39,9 @@ export default function Work({params,setParam}) {
                 },
                 {
                     label:"City",
-                    onChange:(e)=>setParam(
+                    onChange:(e)=>setWork(
                         {
-                            ...params,
+                            ...works,
                         jobcity:e.target.value
                         }
                     )
@@ -49,9 +49,9 @@ export default function Work({params,setParam}) {
                 },
                 {
                     label:"Start date",
-                    onChange:(e)=>setParam(
+                    onChange:(e)=>setWork(
                         {
-                            ...params,
+                            ...works,
                          startDate:e.target.value
                         }
                     )
@@ -59,9 +59,9 @@ export default function Work({params,setParam}) {
                 },
                 {
                     label:"End date",
-                    onChange:(e)=>setParam(
+                    onChange:(e)=>setWork(
                         {
-                            ...params,
+                            ...works,
                         endDate:e.target.value
                         }
                     )
