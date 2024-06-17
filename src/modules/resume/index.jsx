@@ -95,11 +95,11 @@ const [experiences,setExp]=useState([])
                   </div>
 
 
-                  <div  className='flex flex-col w-full'>
+                  <div  className='flex flex-col w-full '>
                          {next !=7&&
 
                        
-                           <div className='flex md:flex-row flex-col  w-full space-x-14'>
+                           <div className='flex md:flex-row flex-col  w-full space-x-'>
                                  <div className='md:w-3/5 w-full py-6'>
                                     {next==1&&<Contact 
                                                   params={params}
@@ -135,7 +135,7 @@ const [experiences,setExp]=useState([])
                                              />}
                                  </div>
                                  
-                                  <div className='w-2/5 py-6 md:flex hidden'>
+                                  <div className='w-3/5 py-6 md:flex hidden'>
                                        <Preview
                                                params={params}
                                                setParam={setParam}

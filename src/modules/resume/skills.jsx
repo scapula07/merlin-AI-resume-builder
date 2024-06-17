@@ -22,6 +22,7 @@ export default function Skills({params,setParam}) {
             res?.length>0&&setloading(false)
             const resultArray = convertToArray(res);
             setParam({...params,skills:resultArray })
+            setText("")
 
            }catch(e){
             console.log(e)
@@ -36,7 +37,10 @@ export default function Skills({params,setParam}) {
          <div className='w-full flex flex-col py-8 flex flex-col space-y-2'>
                 <h5 className='md:text-sm text-xs font-semibold text-slate-600'>In bulleted points, tell us what you can do</h5>
                 <div className='md:w-3/5 w-full border h-56  rounded-lg flex flex-col px-6 py-3 justify-between'>
-                      {/* <ol className='h-full h-44 overflow-y-scroll text-sm flex flex-col'>
+                     <div className='w-full'>
+
+                   
+                      <ol className='overflow-y-scroll text-sm flex flex-col'>
 
                           {params?.skills?.map((skill)=>{
                              return(
@@ -49,11 +53,11 @@ export default function Skills({params,setParam}) {
 
                           }
 
-                      </ol> */}
-                       <textarea placeholder='Enter your skills' className='text-xs font-semibold  px-4 py-2 outline-none text-slate-600'
-                         onClick={(e)=>setText(`${e.target.value}.Can you write me a list seperated in numbers of 5 hard skills a person in this position should possess. The list should be suitable for a resume(in first person)? Do not write "the end" at the end of the list`)}
+                      </ol>
+                       <textarea placeholder='Enter your skills' className='text-xs font-semibold w-full  px-4 py-2 outline-none text-slate-600'
+                         onClick={(e)=>setText(`${e.target.value}.Generate a detailed list of essential skills a professional should possess for the role of [specific role, e.g., Team Lead or Product Lead]. The list should cover both hard skills (technical abilities, industry-specific knowledge) and soft skills (leadership, communication). Please include skills related to [mention any specific areas, e.g., project management, software development, product design]. The skills should be relevant for achieving success and excelling in this role within [mention industry or type of organization, if applicable]. Provide a comprehensive and organized list.Can you write the list seperated in numbers,only mention 5 and i only the skill title without a description. The list should be suitable for a resume(in first person)? Do not write "the end" at the end of the list`)}
                        />
-                    
+                      </div>
 
                        <div className='flex justify-center'>
                           {!isLoading?
