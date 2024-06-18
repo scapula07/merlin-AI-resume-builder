@@ -9,7 +9,7 @@ export default function Skills({params,setParam}) {
 
       function convertToArray(str) {
         // Use regex to split the string by digits followed by a period and a space
-        const items = str.split(/\d+\.\s+/).filter(Boolean);
+        const items = str?.split(/\d+\.\s+/).filter(Boolean);
         return items;
       }
 

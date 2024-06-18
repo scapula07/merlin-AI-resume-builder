@@ -81,10 +81,10 @@ export default function Select() {
                 let match;
                 while ((match = experienceRegex.exec(cleanedInput)) !== null) {
                     const experience = {
-                        company: match[2].trim(),
-                        jobTitle: match[3].trim(),
-                        duration: match[4].trim(),
-                        responsibilities: match[5].trim()
+                        employer: match[2].trim(),
+                        job: match[3].trim(),
+                        startDate: match[4].trim(),
+                        experiences: match[5].trim()
                     };
                     experiences.push(experience);
                 }

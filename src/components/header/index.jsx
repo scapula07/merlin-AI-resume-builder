@@ -17,7 +17,7 @@ export default function Header() {
                       {[
                         {name:"About",link:"/"},
                         {name:"Pricing",link:"/"},
-                        {name:"How it works",link:"/"},
+                        {name:"How it works",link:"/select"},
                         {name:"Solution",link:"/resume"},
                         {name:"Features",link:"/"},
 

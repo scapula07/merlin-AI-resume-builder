@@ -15,7 +15,7 @@ export default function Experience({params,setParam,works,setWork,setNext,experi
 
   function convertToArray(str) {
     // Use regex to split the string by digits followed by a period and a space
-    const items = str.split(/\d+\.\s+/).filter(Boolean);
+    const items = str?.split(/\d+\.\s+/).filter(Boolean);
     return items;
   }
 
@@ -66,7 +66,7 @@ export default function Experience({params,setParam,works,setWork,setNext,experi
                           </ol>
                           :
                           <textarea placeholder='Enter your experience' className='text-sm font-semibold h-44 px-4 py-2 outline-none text-slate-700 w-full'
-                          onClick={(e)=>setText(`${e.target.value}.Can you write me a list seperated in numbers of 5 hard skills a person with this skills or skill should possess. The list should be suitable for a resume(in first person)? Do not write "the end" at the end of the list`)}
+                          onClick={(e)=>setText(`${e.target.value}.Can you write me a list seperated in numbers of only 5 hard skills a person with this skills or skill should possess. The list should be suitable for a resume(in first person)? Do not write "the end" at the end of the list`)}
                         />
 
 

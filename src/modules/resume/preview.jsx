@@ -2,7 +2,13 @@ import React from 'react'
 import { BsDot } from "react-icons/bs";
 
 
-export default function Preview({params,setParam, experiences}) {
+export default function Preview({params,setParam, experiences,  setNext}) {
+   function convertToArray(str) {
+      // Use regex to split the string by digits followed by a period and a space
+      const items = str?.split(/\d+\.\s+/).filter(Boolean);
+      return items;
+    }
+  console.log(typeof(""),"typoe")  
   return (
     <div className='w-full flex justify-center'>
              <div className=' opacity-60 relative' style={{background:"#e3e2de",width:"450px"}}>
@@ -14,8 +20,8 @@ export default function Preview({params,setParam, experiences}) {
 
                         </div>
                         <div className='border-b border-black pb-4 flex  pt-8 w-full'>
-                         <h5 className=' font-semibold text-sm w-1/2' style={{color:"#9d9c9a"}}>SKILLS</h5>
-                         <div className='flex flex-col  w-1/2'>
+                         <h5 className=' font-semibold text-sm w-1/5' style={{color:"#9d9c9a"}}>SKILLS</h5>
+                         <div className='flex flex-col  w-4/5'>
                             {params?.skills?.map((skill)=>{
                                  return(
                                     <h5 className='flex items-center text-xs font-light'>
@@ -36,9 +42,9 @@ export default function Preview({params,setParam, experiences}) {
 
                    </div>
 
-                   <div className='border-b border-black pb-4 flex  py-4 w-full'>
-                                <h5 className=' font-semibold text-sm w-1/2' style={{color:"#9d9c9a"}}>Education</h5>
-                                <div className='flex flex-col  w-1/2'>
+                   <div className='border-b border-black pb-4 flex  py-4 w-full space-x-4'>
+                                <h5 className=' font-semibold text-sm w-1/5 ' style={{color:"#9d9c9a"}}>Education</h5>
+                                <div className='flex flex-col  w-4/5'>
                                       <div className='flex flex-col w-full '>
                                          <h5 className=' font-semibold text-sm pb-3'>{params?.schoolName?.toUpperCase()}</h5>
                                          <p className='text-sm font-light'>
@@ -54,15 +60,22 @@ export default function Preview({params,setParam, experiences}) {
 
                          </div>
 
-                         <div className='border-b border-black pb-4 flex  py-4 w-full'>
-                                <h5 className=' font-semibold text-sm w-1/2' style={{color:"#9d9c9a"}}>Experience</h5>
-                                <div className='flex flex-col  w-1/2 space-y-4'>
+                         <div className='border-b border-black pb-4 flex  py-4 w-full space-x-4'>
+                                <h5 className=' font-semibold text-sm w-1/5' style={{color:"#9d9c9a"}}>Experience</h5>
+                                <div className='flex flex-col  w-4/5 space-y-4'>
+                              
+                                      
                                    {
                                     experiences?.map((exp)=>{
+                                       const resultArray =typeof(exp?.experiences) === typeof("") ? convertToArray(exp?.experiences):[]
+                                       console.log(typeof(exp?.experiences),"here uuu")
                                         return(
                                           <div className='flex flex-col'>
                                                   <h5 className=' font-semibold text-sm '>{exp?.job}</h5>
                                                   <h5 className='font-light text-xs'>{exp?.employer},{exp?.startDate} - {exp?.endDate}</h5>
+                                                  {typeof(exp?.experiences) != typeof("")?
+
+                                                  
                                                 <div className='flex flex-col py-2'>
                                                     {exp?.experiences?.map((experience)=>{
                                                         return(
@@ -73,12 +86,25 @@ export default function Preview({params,setParam, experiences}) {
 
                                                     }
                                                 </div>
+                                                :
+                                                <div className='flex flex-col py-2'>
+                                                         {resultArray?.map((experience)=>{
+                                                            return(
+                                                               <p className='font-light text-xs'>{experience}</p>
+                                                            )
+                                                      
+                                                         })
+
+                                                         }
+                                                  </div>
+                                                  }
                                                 <h5 className='font-light text-xs'>{exp?.jobcountry},{exp?.jobcity} </h5>
    
-                                          </div>
-                                        )
-                                    })
-                                   }
+                                                   </div>
+                                             
+                                                   )
+                                                })
+                                             }
                                   
 
 
@@ -88,8 +114,8 @@ export default function Preview({params,setParam, experiences}) {
 
                         
                          <div className='border-b border-black pb-4 flex  py-4 w-full'>
-                                <h5 className=' font-semibold text-sm w-1/2' style={{color:"#9d9c9a"}}>Contact</h5>
-                                <div className='flex flex-col  w-1/2'>
+                                <h5 className=' font-semibold text-sm w-1/5' style={{color:"#9d9c9a"}}>Contact</h5>
+                                <div className='flex flex-col  w-4/5'>
                                       <div className='flex flex-col font-light text-sm'>
                                          <h5>{params?.email}</h5>
                                          <h5>{params?.country},{params?.city}</h5>
@@ -105,8 +131,8 @@ export default function Preview({params,setParam, experiences}) {
 
 
                 </div>
-                  <div className='w-full h-full absolute top-0  flex items-center justify-center '>
-                        <button className='text-rose-900 border-2 border-rose-900 px-6 py-2 text-lg rounded-full'>Preview</button>
+                  <div className='w-full h-3/6 absolute top-0  flex items-center justify-center '>
+                        <button className='text-rose-900 border-2 border-rose-900 px-6 py-2 text-lg rounded-full' onClick={()=>setNext(7)}>Preview</button>
 
                   </div>
 

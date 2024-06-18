@@ -82,7 +82,13 @@ export default function Education({params,setParam}) {
 
              }
 
+             
+
          </div>
+          {/* <div className='w-full flex justify-end'>
+                      <button className='bg-blue-300 rounded-full text-xs px-6 py-2'>Save and add more</button>
+
+            </div> */}
 
     </div>
   )

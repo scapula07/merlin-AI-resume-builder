@@ -26,7 +26,7 @@ export default function Resume() {
 const [works,setWork]=useState({experiences:[]})
 const [experiences,setExp]=useState([])
 
-    console.log(works,"params")
+  
 
     const doc= localStorage.getItem("doc-params");
     useEffect(()=>{
@@ -36,10 +36,14 @@ const [experiences,setExp]=useState([])
                 ...params,
                 email:resume?.email,
                 phone:resume?.phone,
+                skills:resume?.skills
 
              })
+          setExp(resume?.experiences)
            }
     },[])
+
+    console.log(experiences,"params")
 
   return (
     <Layout>
@@ -51,7 +55,7 @@ const [experiences,setExp]=useState([])
 
                   </div>
 
-                  <div className='flex items-center border-b-2 border-slate-300 pt-6 pb-3 space-x-6'>
+                  <div className='flex items-center border-b-2 border-slate-300 pt-6 pb-3 space-x-6 '>
                                 {[{
                                     name:"Contact info",
                                     no:1,
@@ -135,11 +139,12 @@ const [experiences,setExp]=useState([])
                                              />}
                                  </div>
                                  
-                                  <div className='w-3/5 py-6 md:flex hidden'>
+                                  <div className='md:w-3/5 w-full py-6 md:flex hidden'>
                                        <Preview
                                                params={params}
                                                setParam={setParam}
                                                experiences={experiences}
+                                               setNext={setNext}
                                         />
 
                                   </div>
@@ -153,6 +158,8 @@ const [experiences,setExp]=useState([])
                                 next==7&& <Download 
                                             params={params}
                                             setParam={setParam}
+                                            setNext={setNext}
+                                            experiences={experiences}
                                 />
                                }
                                
