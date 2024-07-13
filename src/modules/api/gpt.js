@@ -1,7 +1,7 @@
 import axios from "axios"
 const baseUrl="https://kennel-stripe-apis.onrender.com"
 
-const OPENAI_API_KEY = 'sk-merlinsgroup-resume-generator-0MxFTGj7gvwhiNyVOrnIT3BlbkFJACmsEbpSS7rTBP6wXbZl' 
+const OPENAI_API_KEY = '' 
   
 const apiUrl = 'https://api.openai.com/v1/chat/completions';
 
